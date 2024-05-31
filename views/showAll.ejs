@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/post_style.css">
+    <title>Instagram Posts</title>
+    
+</head>
+<body>
+    <div style="display: flex;">
+        <img src="/instalogo.png" alt="" style="width:50px; height:50px; margin-left: 660px; margin-top: 20px;">
+        <img src="/instagram.png" alt="" style="width:150px; height:50px; margin-top: 25px; margin-left: 10px;">
+        </div>
+        <% for(p of post){ %>
+            <div class="box">
+            <a href="http://localhost:8080/posts/<%=post.id%>">@<%=p.userName%></a>
+            <img src="/<%=p.image%>" alt="" class="post_img">
+            <img src="/heart.png" alt="" style="width:30px; height:30px; padding-left: 9.5px;">
+            <img src="/comment.png" alt="" style="width:30px; height:30px; padding-left: 9.5px;">
+            <img src="/Share.png" alt="" style="width:30px; height:30px; padding-left: 9.5px;"><hr>
+            <div class="btn_cnt">
+                <div class="btn">
+                    <a href="http://localhost:8080/posts/<%=post.id%>"><button>See post</button></a>
+                </div>
+                <div class="btn">
+                    <a href="http://localhost:8080/posts/<%=post.id%>/edit">
+                        <button>edit post</button>
+                    </a>
+                </div>
+                <form method="post" action="/posts/<%= post.id %>?_method=DELETE">   
+                    <div class="btn">
+                        <button>delete Post</button>
+                    </div>
+                </form>
+            </div>
+        <% } %>
+</body>
+</html>

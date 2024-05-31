@@ -1,0 +1,117 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Instagram Posts</title>
+</head>
+<body>
+    <div class="contain">
+       
+        <% for(post of posts){ %>
+            <div class="card">
+                <p><%=post.id%></p>
+                <strong class="userName">@<%= post.userName %></strong><hr>
+                <img src="/<%=post.image%>" alt="image"><hr>
+                <a href="http://localhost:8080/posts/<%=post.id%>">
+                    <button>See post</button>
+                </a>
+                <a href="http://localhost:8080/posts/<%=post.id%>/edit">
+                    <button>edit post</button>
+                </a>
+                <form method="post" action="/posts/<%= post.id %>?_method=DELETE">  
+                    <button>delete post</button>
+                </form>
+            </div>
+        <% } %>
+        <a href="http://localhost:8080/posts/new">
+            <button>create post</button>
+        </a>
+    </div>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/post_style.css">
+    <title>Post1</title>
+</head>
+<body>
+    <div style="margin-left: 80px; margin-top: 50px;">
+        <img src="/instalogo.png" alt="" style="width:50px; height:50px; margin-left: 660px; margin-top: 20px;">
+        <img src="/instagram.png" alt="" style="width:150px; height:50px; margin-top: 25px; margin-left: 10px;">
+    </div>
+    <% for(post of posts){ %>
+        <div class="box">
+            <div class="userName">
+                
+                <a href="http://localhost:8080/posts/<%=post.userName%>/see" style="padding-bottom:10px; font-size: larger;">
+                    <img src="/<%=post.image%>" style="border-radius: 50%; height:20px; width: 20px; margin-left: 5px; padding-right: 10px;" class="profile"><%=post.userName%>
+                </a>
+            </div>
+        <img src="/<%=post.image%>" alt="" class="post_img">
+        <img src="/heart.png" alt="" style="width:30px; height:30px; padding-left: 9.5px;" class="heart"><span class="heart_count">0</span>
+        <img src="/comment.png" alt="" style="width:30px; height:30px; padding-left: 9.5px;" class="comment"><span class="comment_count">0</span>
+        <img src="/Share.png" alt="" style="width:30px; height:30px; padding-left: 9.5px;" class="share"><span class="share_count">0</span><hr>
+        <div class="btn_cnt">
+            <div class="btn">
+                <a href="http://localhost:8080/posts/<%=post.id%>"><button>See post</button></a>
+            </div>
+            <div class="btn">
+                <a href="http://localhost:8080/posts/<%=post.id%>/edit">
+                    <button>edit post</button>
+                </a>
+            </div>
+            <form method="post" action="/posts/<%= post.id %>?_method=DELETE">   
+                <div class="btn">
+                    <button>delete Post</button>
+                </div>
+            </form>
+        
+        </div>
+        </div>
+        
+    <% } %>
+    <div class="btn">
+        <a href="http://localhost:8080/posts/new"><button>create post</button></a>
+    </div>
+    <script>
+        let hearts = document.querySelectorAll('.heart');
+
+        hearts.forEach((heart) => {
+            heart.addEventListener("click", () => {
+                let countElement = heart.nextElementSibling; // Select the count span next to the heart icon
+                let count = parseInt(countElement.innerText);
+                count++;
+                countElement.innerText = count;
+            });
+        });
+        let comments = document.querySelectorAll('.comment');
+
+        comments.forEach((comment) => {
+            comment.addEventListener("click", () => {
+            let countElement = comment.nextElementSibling; // Select the count span next to the heart icon
+            let count = parseInt(countElement.innerText);
+            count++;
+            countElement.innerText = count;
+        });
+    });
+
+    let shares = document.querySelectorAll('.share');
+
+    shares.forEach((share) => {
+        share.addEventListener("click", () => {
+            let countElement = share.nextElementSibling; // Select the count span next to the heart icon
+            let count = parseInt(countElement.innerText);
+            count++;
+            countElement.innerText = count;
+        });
+    });
+    </script>
+</body>
+</html>

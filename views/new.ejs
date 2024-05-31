@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create a post</title>
+</head>
+<body>
+    <div class="heading">
+        <div style="display: flex; margin-left: 100px;">
+            <img src="/instalogo.png" alt="" style="width:50px; height:50px; margin-left: 660px; margin-top: 20px;">
+            <img src="/instagram.png" alt="" style="width:150px; height:50px; margin-top: 25px; margin-left: 10px;">
+    </div>
+    <div style="margin-top: 40px; text-align: center;">
+        <h1>Edit Post</h1>
+    </div>
+    <form method="post" action="/posts">
+        <label>userName</label>
+        <input type="text" placeholder="userName" name="userName">
+        <label>image link</label>
+        <input type="text" placeholder="image link" name="image">
+        <button type="submit">create post</button>
+    </form>
+</body>
+</html>
