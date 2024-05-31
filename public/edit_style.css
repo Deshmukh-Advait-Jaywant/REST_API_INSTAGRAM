@@ -1,0 +1,39 @@
+.contain{
+    padding:25px;
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.2);
+    width:350px;
+    height:350px;
+    margin-left:650px;
+    border-radius: 10%;
+    background-color: white;
+}
+body{
+    height: 795px;
+    background-image: linear-gradient(209deg, #fccc63,#ff49c6 80%);
+}
+.heading{
+    text-align: center;
+    color: black
+}
+h1{
+    font-family:cursive;
+}
+p{
+    font-size: larger;
+}
+span{
+    text-decoration: underline black;
+}
+button{
+    background-color: aliceblue;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+}
+.space{
+    margin-top: 25px;
+}
+textarea{
+    border:none;
+    border:2px solid plum ;
+}
