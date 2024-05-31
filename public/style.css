@@ -1,0 +1,29 @@
+img{
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+}
+body{
+    background-image: linear-gradient(239deg,rgb(106, 106, 106),rgb(53, 53, 53) 79%);
+    color: #ffffff;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 40%;
+    margin-top: 50px;
+    width:340px;
+    height: 500px;
+    border: 2px solid rgb(248, 248, 248);
+}
+.userName{
+    padding: 10px;
+    text-align: center;
+}
+hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Set the height of the line */
+    background-color: #ffffff; /* Change the color of the line */
+    margin: 20px 0; /* Add margin for spacing */
+  }
